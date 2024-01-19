@@ -17,10 +17,9 @@ a {
 }
 
 header {
-  width: 100%;
   padding: 14px 89px 13px 89px;
   flex-shrink: 0;
-  background: var(--White, #FFF);
+  background: var(--White, #fff);
   /* Shadow/Badge */
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
@@ -30,7 +29,8 @@ header img {
   padding: 0px 19px 0px 16px;
 }
 
-header, nav {
+header,
+nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,38 +39,60 @@ header, nav {
 nav {
   width: 100%;
   height: 50px;
-  background: var(--Grey-2, #EAEAEA);
+  background: var(--Grey-2, #eaeaea);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   gap: 17px;
   flex-shrink: 0;
 }
 
-h2, h3, p1, p2, p3 {
+h2,
+h3,
+p,
+p2,
+p {
   color: #000;
 }
 
-h1, p {
-  color: var(--Grey, #353535);
+h1,
+h2,
+h3,
+h4,
+p2,
+.filter__white {
+  font-family: "Roboto";
+  font-style: normal;
+  line-height: normal;
+}
+
+h1,
+.filter__dark {
+  /* Button */
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
 }
 
 h2 {
-  text-align: center;
   /* Section Title */
-  font-family: "Roboto";
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
+}
+
+h1,
+.txt {
+  color: var(--Grey, #353535);
+}
+
+.filter__white {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .menu_reservation-card p {
   text-align: center;
   /* Paragraph */
-  font-family: "Roboto";
   font-size: 18px;
-  font-style: normal;
   font-weight: 300;
-  line-height: normal;
 }
 
 /*section*/
@@ -82,38 +104,28 @@ section {
 }
 section h2 {
   text-align: center;
-  /* Section Title */
-  font-family: "Roboto";
-  font-size: 24px;
-  font-weight: 700;
 }
 
+/*section reservation-card*/
 .menu_reservation-card {
   margin: 40px;
 }
-.menu_reservation-card p {
-  color: var(--Grey, #353535);
-  text-align: center;
-  /* Paragraph */
-  font-family: "Robot";
-  font-size: 18px;
-  font-weight: 300;
-}
-.menu_reservation-card button.filter__dark {
+
+button.filter__dark {
   align-self: center;
   background: linear-gradient(170deg, #ff79da, #9747ff);
-  font-size: large;
   border: none;
-  margin: 30px;
+  margin-top: 20px;
   padding: 15px;
   margin-bottom: 15px;
   border-radius: 25px;
-  color: white;
   cursor: pointer;
   box-shadow: 4px 4px 2px lightgrey;
-  color: var(--White, #FFF);
+  color: var(--White, #fff);
 }
 
+/*section filter-card
+ button*/
 .filter-card {
   margin-left: 25px;
   margin-right: 25px;
@@ -128,21 +140,18 @@ section h2 {
 }
 .filter-card .filter__white {
   display: flex;
-  gap: 30px;
+  gap: 10px;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 20px;
   border: none;
-  background: var(--Background, #F6F6F6);
+  background: var(--Background, #f6f6f6);
   /* Shadow/Instructions */
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   padding: 25px;
 }
-.filter-card p3 {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-}
 
+/*section menu restaurant*/
 .menu__restaurant {
   margin: 40px;
   margin-left: 25px;
@@ -150,7 +159,6 @@ section h2 {
 }
 .menu__restaurant h2 {
   text-align: start;
-  font-size: 24px;
 }
 .menu__restaurant .restaurant__card {
   display: flex;
@@ -159,9 +167,29 @@ section h2 {
 }
 .menu__restaurant .card {
   border-radius: 15px;
-  background: #FFF;
+  background: #fff;
   /* Shadow/Card */
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+}
+.menu__restaurant .legende {
+  position: relative;
+}
+.menu__restaurant .title {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  right: 5%;
+  padding: 7px;
+  border-radius: 2px;
+  background: var(--Green, #99e2d0);
+  /* Shadow/Badge */
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  color: var(--Green-Font, #008766);
+  text-align: center;
+  font-size: 14px;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: normal;
 }
 .menu__restaurant .card img {
   width: 100%;
@@ -181,28 +209,21 @@ section h2 {
 }
 .menu__restaurant h3 {
   font-size: 18px;
-  font-family: "Roboto";
-  font-size: 18px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
 }
-.menu__restaurant p1 {
+.menu__restaurant .txt {
   font-size: 17px;
   font-weight: 300;
-  font-family: "roboto";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 footer {
-  display: flex;
   padding: 22px 25px;
-  flex-direction: column;
-  align-items: flex-start;
   gap: 16px;
   background: var(--Grey, #353535);
 }
 footer h4 {
-  color: var(--White, #FFF);
+  color: var(--White, #fff);
   font-family: "Shrikhand", serif;
   font-size: 18px;
   font-style: normal;
@@ -213,7 +234,7 @@ footer h4 {
   flex-shrink: 0;
 }
 footer li {
-  color: var(--White, #FFF);
+  color: var(--White, #fff);
   font-family: "Roboto";
   font-size: 16px;
   font-style: normal;
@@ -225,9 +246,6 @@ footer .fa-solid {
   margin-right: 9px;
 }
 footer .contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   gap: 7px;
 }
 footer a {
