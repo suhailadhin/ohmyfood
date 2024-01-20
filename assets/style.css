@@ -102,16 +102,16 @@ section {
   gap: 10px;
   margin-bottom: 30px;
 }
-section h2 {
-  text-align: center;
-}
 
 /*section reservation-card*/
 .menu_reservation-card {
-  margin: 40px;
+  margin-top: 40px;
+  background: var(--Background, #F6F6F6);
 }
-
-button.filter__dark {
+.menu_reservation-card h2 {
+  text-align: center;
+}
+.menu_reservation-card button.filter__dark {
   align-self: center;
   background: linear-gradient(170deg, #ff79da, #9747ff);
   border: none;
