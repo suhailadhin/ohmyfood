@@ -1,26 +1,26 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap";
 @import './libs/animationHomePage.scss';
 @import './libs/mediaquery.scss';
-@import './libs/variables.scss';
-@import './libs/mixin.scss';
+@import './libs/variablesHomePage.scss';
+@import './libs/mixinHomePage.scss';
+
+/*style for home page*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+/*body*/
 body {
   display: flex;
   flex-direction: column;
   margin: auto;
 }
-
-//body and container
-
-$couleur-back: #fff;
-
+/*link*/
 a {
   text-decoration: none;
 }
+/*header style*/
 header {
   padding: 14px 89px 13px 89px;
   flex-shrink: 0;
@@ -28,12 +28,11 @@ header {
   /* Shadow/Badge */
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   img {
-    width: 197px;
     height: 36px;
     padding: 0px 19px 0px 16px;
   }
 }
-
+/*navigation style*/
 nav {
   width: 100%;
   height: 50px;
@@ -42,23 +41,18 @@ nav {
   gap: 17px;
   flex-shrink: 0;
 }
-//variables
-$primary-color: #000;
+/*color for text*/
 h2,
 h3
  {
   color: $primary-color;
 }
-
-//variables
-$secondary-color: var(--Grey, #353535);
-
+/*color for text*/
 h1,
 .txt {
   color: $secondary-color;
 }
-
-
+/*style*/
 a,
 h1,
 h2,
@@ -80,16 +74,15 @@ h1,
   font-weight: 500;
   line-height: normal;
 }
-
-h2 {
-  /* Section Title */
-  font-size: 24px;
-  font-weight: 700;
+/*size for h2*/
+.menu_reservation-card h2,
+.filter-card h2,
+#menu__restaurant h2 {
+@include sizeH2 ();
 }
-
 /*section reservation-card*/
 .menu_reservation-card {
-  background: var(--Background, #F6F6F6);
+  @include color-palet ();
   width: 100%;
 h2 {
     text-align: center;
@@ -110,12 +103,11 @@ button.filter__dark {
   margin-top: 20px;
   padding: 15px;
   margin-bottom: 57px;
-  border-radius: 25px;
- 
+  border-radius: 25px; 
+
  &:hover{
   @include animationFilterDark ();
 }
-
 a{
   color: $couleur-back;
   text-align: center;
@@ -124,12 +116,10 @@ a{
 }
 }
 }
-
 /*section filter-card
  button*/
 .filter-card {
   background: $couleur-back;
-  
   h2 {
     text-align: start;
     margin:40px 25px 20px;
@@ -151,7 +141,7 @@ a{
     background: var(--Background, #f6f6f6);
     /* Shadow/Instructions */
     padding: 25px;
-  
+
   &:hover {
   @include animationFilter-card ();
   }
@@ -166,22 +156,21 @@ a{
  border: 1px solid transparent;
  background:var(--Primary, #9356DC);
  padding: 5px 10px;
- color: var(--White, #FFF);
+ color: $couleur-back;
  font-size: 14px;
  position: absolute;
  left: 25px;
 }
 }
-
 /*section menu restaurant*/
 #menu__restaurant {
-  background: var(--Background, #F6F6F6);
+  @include color-palet ();
   h2 {
-    text-align: start;
     margin: 40px 25px 20px;
   }
   .restaurant__card {
-    @include flex-structure;
+    display: flex;
+    flex-direction: column;
     gap: 18px;
     margin: 0px 25px 68px;
   }
@@ -240,7 +229,7 @@ a{
       sans-serif;
   }
 }
-
+/*footer style*/
 footer {
   @include flex-structure;
   gap: 16px;
@@ -275,6 +264,5 @@ footer .contact {
   @include flex-structure;
   gap: 7px;
 }
-/* MEDIA QUERIES*/
-/*Tablet*/
+
 
