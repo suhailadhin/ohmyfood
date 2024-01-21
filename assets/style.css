@@ -1,4 +1,17 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap";
+header,
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section, #menu__restaurant, .filter-card, .menu_reservation-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,13 +39,6 @@ header img {
   width: 197px;
   height: 36px;
   padding: 0px 19px 0px 16px;
-}
-
-header,
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 nav {
@@ -80,12 +86,6 @@ h2 {
   /* Section Title */
   font-size: 24px;
   font-weight: 700;
-}
-
-section, #menu__restaurant, .filter-card, .menu_reservation-card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 /*section reservation-card*/
@@ -258,6 +258,10 @@ footer h4 {
 footer li {
   color: rgb(255, 255, 255);
   list-style-type: none;
+}
+footer li:hover {
+  font-weight: bold;
+  text-decoration: underline;
 }
 footer .fa-solid {
   margin-right: 13px;

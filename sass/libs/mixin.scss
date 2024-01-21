@@ -1,0 +1,26 @@
+@mixin flex-structure() {
+    display: flex;
+    flex-direction: column;
+  }
+
+  //mixin
+
+@mixin center-flex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header,
+  nav {
+    @include center-flex();
+  }
+
+  //heritage avec la fonction include et extend pour la section
+section {
+    @include flex-structure;
+    gap: 10px;
+  }
+  
+  #menu__restaurant, .filter-card, .menu_reservation-card {
+    @extend section;
+  }
