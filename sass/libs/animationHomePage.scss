@@ -1,0 +1,25 @@
+//animation button for menu reservation card
+@mixin animationFilterDark () {
+    border-radius: 25px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+//animation button filter card
+@mixin animationFilter-card () {
+    /* Shadow/Instructions */
+   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+//animation card in section menu restaurant 
+@mixin animationFilterCardImg () {
+  /* Shadow/Card */
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+}
+
+//animation list in footer
+
+@mixin listEven () {
+  font-weight: bold;
+  text-decoration: underline;
+}
