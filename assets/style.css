@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Oswald&family=Signika+Negative:wght@700&family=Teko:wght@500&family=Tiro+Bangla:ital@1&display=swap");
-@import url("assets\animation.scss");
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +18,7 @@ a {
 header {
   padding: 14px 89px 13px 89px;
   flex-shrink: 0;
-  background: var(--White, #fff);
+  background: #fff;
   /* Shadow/Badge */
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
@@ -51,6 +50,12 @@ h3 {
 }
 
 h1,
+.txt {
+  color: var(--Grey, #353535);
+}
+
+a,
+h1,
 h2,
 h3,
 h4,
@@ -63,7 +68,8 @@ li {
 }
 
 h1,
-.filter__dark {
+.filter__dark,
+.filter__white {
   /* Button */
   font-size: 16px;
   font-weight: 500;
@@ -76,25 +82,7 @@ h2 {
   font-weight: 700;
 }
 
-h1,
-.txt {
-  color: var(--Grey, #353535);
-}
-
-.filter__white {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.menu_reservation-card p {
-  text-align: center;
-  /* Paragraph */
-  font-size: 18px;
-  font-weight: 300;
-}
-
-/*section*/
-section {
+section, #menu__restaurant, .filter-card, .menu_reservation-card {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -125,15 +113,23 @@ section {
   padding: 15px;
   margin-bottom: 57px;
   border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 4px 4px 2px lightgrey;
-  color: var(--Grey, #353535);
+}
+.menu_reservation-card button.filter__dark:hover {
+  border-radius: 25px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+.menu_reservation-card button.filter__dark a {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 /*section filter-card
  button*/
 .filter-card {
-  background: var(--White, #FFF);
+  background: #fff;
 }
 .filter-card h2 {
   text-align: start;
@@ -147,6 +143,9 @@ section {
 }
 .filter-card .filter__white {
   display: flex;
+  flex-direction: column;
+  flex-direction: row;
+  margin-left: 20px;
   gap: 10px;
   justify-content: flex-start;
   align-items: center;
@@ -154,37 +153,55 @@ section {
   border: none;
   background: var(--Background, #f6f6f6);
   /* Shadow/Instructions */
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   padding: 25px;
+}
+.filter-card .filter__white:hover {
+  /* Shadow/Instructions */
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.filter-card .fa-store:before {
+  color: var(--Primary, #9356DC);
+}
+.filter-card .number {
+  color: #fff;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: var(--Primary, #9356DC);
+  padding: 5px 10px;
+  color: var(--White, #FFF);
+  font-size: 14px;
+  position: absolute;
+  left: 25px;
 }
 
 /*section menu restaurant*/
-.menu__restaurant {
+#menu__restaurant {
   background: var(--Background, #F6F6F6);
 }
-.menu__restaurant h2 {
+#menu__restaurant h2 {
   text-align: start;
   margin: 40px 25px 20px;
 }
-.menu__restaurant .restaurant__card {
+#menu__restaurant .restaurant__card {
   display: flex;
   flex-direction: column;
   gap: 18px;
   margin: 0px 25px 68px;
 }
-.menu__restaurant .card {
+#menu__restaurant article.card {
   border-radius: 15px;
-  background: var(--White, #FFF);
+  background: #fff;
+}
+#menu__restaurant article.card:hover {
   /* Shadow/Card */
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
-.menu__restaurant .legende {
+#menu__restaurant .legende {
   position: relative;
 }
-.menu__restaurant .title {
+#menu__restaurant .title {
   position: absolute;
   top: 10%;
-  left: 70%;
   right: 5%;
   padding: 7px;
   border-radius: 2px;
@@ -198,27 +215,28 @@ section {
   font-weight: 500;
   line-height: normal;
 }
-.menu__restaurant .card img {
+#menu__restaurant .card img {
   width: 100%;
-  height: 221px;
+  height: 231px;
   object-fit: cover;
   border-radius: 15px 15px 0px 0px;
 }
-.menu__restaurant .card-txt {
+#menu__restaurant .card-content {
   padding: 15px;
   padding-bottom: 10px;
 }
-.menu__restaurant .card-txt i {
+#menu__restaurant .card-content i {
   display: flex;
+  flex-direction: column;
+  flex-direction: row;
   justify-content: end;
   color: #000;
-  padding-top: 10px;
 }
-.menu__restaurant h3 {
+#menu__restaurant h3 {
   font-size: 18px;
   font-weight: 700;
 }
-.menu__restaurant .txt {
+#menu__restaurant .txt {
   font-size: 17px;
   font-weight: 300;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -232,23 +250,24 @@ footer {
   background: var(--Grey, #353535);
 }
 footer h4 {
-  color: var(--White, #FFF);
+  color: #fff;
   font-family: "Shrikhand", serif;
   font-size: 18px;
   font-weight: 400;
 }
 footer li {
-  font-family: sans-serif;
   color: rgb(255, 255, 255);
-  font-size: 16px;
-  font-weight: 500;
   list-style-type: none;
 }
 footer .fa-solid {
-  margin-right: 9px;
+  margin-right: 13px;
+  width: 11.918px;
 }
 footer a {
   color: inherit;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 footer .contact {
@@ -259,51 +278,5 @@ footer .contact {
 
 /* MEDIA QUERIES*/
 /*Tablet*/
-@media (min-width: 1024px) {
-  body {
-    max-width: 1440px;
-    margin: auto;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .filter-card .btn {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .filter-card {
-    display: flex;
-    padding: 50px 180px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
-    align-self: stretch;
-  }
-  .menu__restaurant {
-    display: flex;
-    padding: 0px 180px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-    align-self: stretch;
-  }
-  footer {
-    display: flex;
-    padding: 30px 25px;
-    flex-direction: row-reverse;
-    align-items: flex-end;
-    gap: 16px;
-    flex-shrink: 0;
-  }
-  footer .contact {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 27px;
-  }
-}
 
 /*# sourceMappingURL=style.css.map */

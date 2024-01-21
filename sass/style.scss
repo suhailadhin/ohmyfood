@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Oswald&family=Signika+Negative:wght@700&family=Teko:wght@500&family=Tiro+Bangla:ital@1&display=swap");
-@import url("assets\animation.scss");
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +11,9 @@ body {
   margin: auto;
 }
 
-$display: flex;
+//body and container
+
+$couleur-back: #fff;
 
 a {
   text-decoration: none;
@@ -19,7 +21,7 @@ a {
 header {
   padding: 14px 89px 13px 89px;
   flex-shrink: 0;
-  background: var(--White, #fff);
+  background: $couleur-back;
   /* Shadow/Badge */
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   img {
@@ -30,6 +32,11 @@ header {
 }
 
 //mixin
+
+@mixin flex-structure() {
+  display: flex;
+  flex-direction: column;
+}
 
 @mixin center-flex() {
   display: flex;
@@ -48,17 +55,24 @@ nav {
   gap: 17px;
   flex-shrink: 0;
 }
-
 //variables
-
 $primary-color: #000;
-
 h2,
 h3
  {
   color: $primary-color;
 }
 
+//variables
+$secondary-color: var(--Grey, #353535);
+
+h1,
+.txt {
+  color: $secondary-color;
+}
+
+
+a,
 h1,
 h2,
 h3,
@@ -72,7 +86,8 @@ li {
 }
 
 h1,
-.filter__dark {
+.filter__dark,
+.filter__white {
   /* Button */
   font-size: 16px;
   font-weight: 500;
@@ -85,30 +100,14 @@ h2 {
   font-weight: 700;
 }
 
-//variables
-$secondary-color: var(--Grey, #353535);
-
-h1,
-.txt {
-  color: $secondary-color;
-}
-
-.filter__white {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.menu_reservation-card p {
-  text-align: center;
-  /* Paragraph */
-  font-size: 18px;
-  font-weight: 300;
-}
-/*section*/
+//heritage avec la section
 section {
-  display: $display;
-  flex-direction: column;
+  @include flex-structure;
   gap: 10px;
+}
+
+#menu__restaurant, .filter-card, .menu_reservation-card {
+  @extend section;
 }
 
 /*section reservation-card*/
@@ -135,27 +134,40 @@ button.filter__dark {
   padding: 15px;
   margin-bottom: 57px;
   border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 4px 4px 2px lightgrey;
-  color:$secondary-color ;
+ 
+ &:hover{
+  border-radius: 25px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+a{
+  color: $couleur-back;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
 }
 }
+}
+
 /*section filter-card
  button*/
 .filter-card {
-  background: var(--White, #FFF);
+  background: $couleur-back;
+  
   h2 {
     text-align: start;
     margin:40px 25px 20px;
   }
   .btn {
-    display: $display;
-    flex-direction: column;
+    @include flex-structure;
     gap: 20px;
     margin: 0px 25px 68px;
   }
   .filter__white {
-    display: $display;
+    @include flex-structure;
+    flex-direction: row;
+    margin-left: 20px;
     gap: 10px;
     justify-content: flex-start;
     align-items: center;
@@ -163,30 +175,50 @@ button.filter__dark {
     border: none;
     background: var(--Background, #f6f6f6);
     /* Shadow/Instructions */
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     padding: 25px;
+  
+  &:hover {
+/* Shadow/Instructions */
+   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   }
+}
+.fa-store:before{
+  color: var(--Primary, #9356DC);
+}
+
+.number {
+ color: $couleur-back;
+ border-radius: 50%;
+ border: 1px solid transparent;
+ background:var(--Primary, #9356DC);
+ padding: 5px 10px;
+ color: var(--White, #FFF);
+ font-size: 14px;
+ position: absolute;
+ left: 25px;
+}
 }
 
 /*section menu restaurant*/
-.menu__restaurant {
+#menu__restaurant {
   background: var(--Background, #F6F6F6);
   h2 {
     text-align: start;
     margin: 40px 25px 20px;
   }
   .restaurant__card {
-    display: flex;
-    flex-direction: column;
+    @include flex-structure;
     gap: 18px;
     margin: 0px 25px 68px;
-    
   }
-  .card {
+  article.card {
     border-radius: 15px;
-    background: var(--White, #FFF);
-    /* Shadow/Card */
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+    background: $couleur-back;
+
+    &:hover{
+      /* Shadow/Card */
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+      }
   }
 
   .legende {
@@ -195,7 +227,6 @@ button.filter__dark {
   .title {
     position: absolute;
     top: 10%;
-    left: 70%;
     right: 5%;
     padding: 7px;
     border-radius: 2px;
@@ -211,19 +242,19 @@ button.filter__dark {
   }
   .card img {
     width: 100%;
-    height: 221px;
+    height: 231px;
     object-fit: cover;
     border-radius: 15px 15px 0px 0px;
   }
-  .card-txt {
+  .card-content {
     padding: 15px;
     padding-bottom: 10px;
   }
-  .card-txt i {
-    display: $display;
+  .card-content i {
+    @include flex-structure;
+    flex-direction: row;
     justify-content: end;
     color: $primary-color;
-    padding-top: 10px;
   }
   h3 {
     font-size: 18px;
@@ -238,84 +269,35 @@ button.filter__dark {
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
+  @include flex-structure;
   gap: 16px;
   padding: 22px 25px;
   background: $secondary-color;
   h4 {
-    
-    color:var(--White, #FFF);
+    color:$couleur-back;
     font-family: 'Shrikhand', serif;
     font-size: 18px;
     font-weight: 400;
   }
   li {
-    font-family: sans-serif;
     color: rgba(255, 255, 255, 1);
-    font-size: 16px; 
-    font-weight: 500; 
     list-style-type: none; 
   }
   .fa-solid {
-    margin-right: 9px;
+    margin-right: 13px;
+    width: 11.918px;
   }
   a {
     color: inherit;
+    font-family: sans-serif;
+    font-size: 16px; 
+    font-weight: 500; 
   }
 }
 footer .contact {
-  display: flex;
-  flex-direction: column;
+  @include flex-structure;
   gap: 7px;
 }
 /* MEDIA QUERIES*/
 /*Tablet*/
-@media (min-width: 1024px) {
-  body {
-    max-width: 1440px;
-    margin: auto;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .filter-card .btn {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .filter-card {
-    display: flex;
-    padding: 50px 180px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
-    align-self: stretch;
-  }
-  .menu__restaurant {
-    display: flex;
-    padding: 0px 180px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-    align-self: stretch;
-  }
-  footer {
-    display: flex;
-    padding: 30px 25px;
-    flex-direction: row-reverse;
-    align-items: flex-end;
-    gap: 16px;
-    flex-shrink: 0;
-  }
-  footer .contact {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 27px;
-  }
-}
 
