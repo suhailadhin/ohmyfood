@@ -25,6 +25,7 @@ section, #menu__restaurant, .filter-card, .menu_reservation-card {
 
 /*body*/
 body {
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -351,7 +352,6 @@ footer .contact {
 @media (min-width: 1024px) {
   body {
     margin: auto;
-    max-width: 1440;
   }
   /*header*/
   header {
