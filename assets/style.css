@@ -117,7 +117,7 @@ h1,
   font-weight: 300;
   padding: 0 56px;
 }
-.menu_reservation-card button.filter__dark {
+.menu_reservation-card .filter__dark {
   align-self: center;
   background: linear-gradient(170deg, #ff79da, #9747ff);
   border: none;
@@ -126,12 +126,12 @@ h1,
   margin-bottom: 57px;
   border-radius: 25px;
 }
-.menu_reservation-card button.filter__dark:hover {
+.menu_reservation-card .filter__dark:hover {
   border-radius: 25px;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
-.menu_reservation-card button.filter__dark a {
+.menu_reservation-card .filter__dark a {
   color: #fff;
   text-align: center;
   font-size: 16px;
@@ -258,7 +258,7 @@ h1,
   background-clip: text;
   -webkit-background-clip: text;
 }
-#menu__restaurant .card-title {
+#menu__restaurant .h3 {
   font-size: 18px;
   font-weight: 700;
 }

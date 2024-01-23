@@ -102,7 +102,7 @@ h2 {
   font-weight: 300;
   padding: 0 56px;
 }
-button.filter__dark {
+.filter__dark {
   align-self: center;
   background: linear-gradient(170deg, #ff79da, #9747ff);
   border: none;
@@ -236,7 +236,7 @@ a{
     .my-heart-full:hover {
       @include animationIconHeart ();
     }
-  .card-title {
+  .h3 {
     font-size: 18px;
     font-weight: 700;
   }
