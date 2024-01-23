@@ -112,7 +112,7 @@ h2 {
   border-radius: 25px; 
 
  &:hover{
-  @include animationFilterDark ();
+  @include animationFilterDarks ();
 }
 a{
   color: $couleur-back;
