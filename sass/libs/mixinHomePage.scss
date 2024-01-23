@@ -1,10 +1,9 @@
+//mixin
+/*structure de la page*/
 @mixin flex-structure() {
     display: flex;
     flex-direction: column;
   }
-
-  //mixin
-
 @mixin center-flex() {
     display: flex;
     justify-content: center;

@@ -38,7 +38,6 @@ header {
 }
 /*navigation style*/
 nav {
-  width: 100%;
   height: 50px;
   background: var(--Grey-2, #eaeaea);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -47,17 +46,20 @@ nav {
 }
 /*color for text*/
 h2,
-h3
+h3,
+.card-title
  {
   color: $primary-color;
 }
 /*color for text*/
 h1,
-.txt {
+.card-text {
   color: $secondary-color;
 }
 /*style*/
 a,
+.card-title,
+.card-text,
 h1,
 h2,
 h3,
@@ -137,6 +139,7 @@ a{
     @include flex-structure;
     position: relative;
     flex-direction: row;
+    align-items: center;
     gap: 10px;
     justify-content: flex-start;
     border-radius: 20px;
@@ -147,6 +150,7 @@ a{
 
   &:hover {
   @include animationFilter-card ();
+  cursor: pointer;
   }
 }
 .fa-store:before{
@@ -162,7 +166,7 @@ a{
  color: $couleur-back;
  font-size: 14px;
  position: absolute;
- left: -22px;
+ left: -15px;
 }
 }
 /*section menu restaurant*/
@@ -180,7 +184,7 @@ a{
   article.card {
     border-radius: 15px;
     background: $couleur-back;
-
+    
     &:hover{
       @include animationFilterCardImg (); 
       }
@@ -213,25 +217,36 @@ a{
   }
   .card-content {
     padding: 15px;
-    padding-bottom: 10px;
   }
-  .card-content i {
-    @include flex-structure;
-    flex-direction: row;
-    justify-content: end;
-    color: $primary-color;
+  .icon {
+    color: black; /* Couleur de l'icône (orange dans cet exemple) */
+    float: right; /* Alignement à droite */
+    margin-top: -20px;
+    margin-right: 20px;
+    font-size: 20px;
   }
-  h3 {
+ i{
+  position: absolute;
+}
+    .my-heart-full {
+      opacity: 0;
+      transition-property: all;
+      transition-duration: 3s;
+    }
+    .my-heart-full:hover {
+      @include animationIconHeart ();
+    }
+  .card-title {
     font-size: 18px;
     font-weight: 700;
   }
-  .txt {
+  .card-text {
     font-size: 17px;
     font-weight: 300;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
+    font-family: sans-serif;
   }
 }
+
 /*footer style*/
 footer {
   @include flex-structure;
@@ -243,6 +258,7 @@ footer {
     font-family: 'Shrikhand', serif;
     font-size: 18px;
     font-weight: 400;
+    margin-right: 30px;
   }
   li {
     color: rgba(255, 255, 255, 1);
@@ -271,57 +287,67 @@ footer .contact {
 /* MEDIA QUERIES*/
 /*Tablet*/
 @media (min-width: 768px) {
-  
-  .filter__white {
-    padding: 20px;
-  }
-
-.filter-card .btn {
-    flex-direction: row;
-    gap: 50px;
-  }
-
-  #menu__restaurant {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-    align-self: stretch;
-  
- .restaurant__card {
-    display: grid;
-    width: 95%;
-    grid-template-columns: 1fr 1fr;
-  }
+  @include tabletQueriesMedia ();
 }
-  footer {
-    display: flex;
-    padding: 30px 25px;
-    flex-direction: row-reverse;
-    align-items: flex-end;
-    gap: 16px;
-    flex-shrink: 0;
-  }
-  footer .contact {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 27px;
-  }
-}
-
 /*Media queries*/
 /*desktop and large desktop*/
 
 @media (min-width: 1024px) {
   body {
     margin: auto;
+    max-width: 1440;
   }
-
+/*header*/
   header {
     height: 96px;
     padding: 30px 0px 31.798px 0px;  
   }
-}
+/*main*/
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  /*section menu reservation*/
+  .menu_reservation-card,
+  h2{
+  font-size: 40px;
+  font-weight: 700;
+  }
+  /*section bouton filter*/
+  .filter-card {
+    display: flex;
+    padding: 50px 180px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+
+  .filter-card, h2 { 
+    font-size: 24px;
+    margin: 0px;
+  }
+  }
+  .filter-card .btn {
+    flex-direction: row;
+    gap: 50px;
+    margin: 0px 2px 0px 20px;
+  }
+  /*section menu restaurant*/
+  #menu__restaurant {
+    padding: 0px 180px;  
+  }
+  #menu__restaurant h2 {
+    margin:30px 0px 0px 0px;
+    font-size: 24px;
+  } 
+  
+  #menu__restaurant .restaurant__card {
+    margin: 0px 0px 28px;
+    width: 100%;
+    gap: 50px;
+  }
+  
+  }
+
 
 
