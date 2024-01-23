@@ -16,7 +16,32 @@ section, #menu__restaurant, .filter-card, .menu_reservation-card {
   gap: 10px;
 }
 
+.background-image {
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+}
+
+.contents {
+  height: 1307px;
+  background: var(--Background, #F6F6F6);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+h4 {
+  color: var(--Black, #101010);
+  font-family: Shrikhand;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 /*style for home page*/
+/*style for restaurant page*/
 * {
   box-sizing: border-box;
   margin: 0;
