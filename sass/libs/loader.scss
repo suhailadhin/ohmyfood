@@ -1,0 +1,32 @@
+.loader {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background:$secondary-color;
+    inset: 0;
+    z-index: 1;
+    opacity: 82%;
+    animation: disappear 3s forwards;
+    animation-delay: 1s;
+    transform-origin: top;
+    &::after {
+        content: "Ohmyfood";
+        color: black;
+        font-family:'Shrikhand', serif;
+        font-size: 25px;
+    }
+}
+
+.fa-spin {
+    
+    color: #9356DC;
+    font-size: 58px;
+}
+
+
+@keyframes disappear {
+    to {
+        transform: scale(0);
+    }
+}
+

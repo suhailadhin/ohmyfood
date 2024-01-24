@@ -5,6 +5,8 @@
 @import './libs/mixinHomePage.scss';
 @import './libs/PageRestaurants.scss';
 @import './libs/animationPageRestaurants.scss';
+@import './libs/mixinPageRestaurants.scss';
+@import './libs/loader.scss';
 
 /*style for home page*/
 /*style for restaurant page*/
@@ -19,6 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: auto;
+  background: var(--Background, #F6F6F6);
 }
 /*link*/
 a {
@@ -67,13 +70,20 @@ a,
 h1,
 h2,
 h3,
-h4,
 .txt,
 .filter__white,
 li {
   font-family: "Roboto";
   font-style: normal;
   line-height: normal;
+}
+
+h4 {
+  color:$couleur-back;
+  font-family: 'Shrikhand', serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-right: 30px;
 }
 
 h1,
@@ -256,13 +266,7 @@ footer {
   gap: 16px;
   padding: 22px 25px;
   background: $secondary-color;
-  h4 {
-    color:$couleur-back;
-    font-family: 'Shrikhand', serif;
-    font-size: 18px;
-    font-weight: 400;
-    margin-right: 30px;
-  }
+  
   li {
     color: rgba(255, 255, 255, 1);
     list-style-type: none; 
@@ -290,13 +294,13 @@ footer .contact {
 /* MEDIA QUERIES*/
 /*Tablet*/
 @media (min-width: 768px) {
-  @include tabletQueriesMedia ();
+  @include tabletQueriesMediaHomePage ();
 }
 /*Media queries*/
 /*desktop and large desktop*/
 
 @media (min-width: 1024px) {
-  @include desktopQueriesMedia ();
+  @include desktopQueriesMediaHomePage ();
 }  
 
 

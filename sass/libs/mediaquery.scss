@@ -1,6 +1,6 @@
 /* MEDIA QUERIES*/
 /*Tablet*/
-@mixin tabletQueriesMedia () {
+@mixin tabletQueriesMediaHomePage () {
   /*section bouton filter*/
   .filter__white {
     padding: 20px;
@@ -43,7 +43,7 @@
 
 //Responsive desktop 
 
-@mixin desktopQueriesMedia () {
+@mixin desktopQueriesMediaHomePage () {
   body {
     margin: auto;
   }
@@ -97,4 +97,34 @@
     gap: 50px;
   }
   }
+
+  //Media queries for page restaurant
+
+/* MEDIA QUERIES*/
+/*Tablet*/
+
+@mixin tabletQueriesMediaPageRestaurant () {
+  .contents {
+   justify-content: space-around;
+  }
+  .main-container {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+ 
+}
+
+/* MEDIA QUERIES for desktop*/
+
+@mixin desktopQueriesPagesRestaurant () {
+  .contents {
+    justify-content: center;
+  }
+  .menu_enter,
+      .menu_plat,
+      .menu_dessert  {
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+}
 
