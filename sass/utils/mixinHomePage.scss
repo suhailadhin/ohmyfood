@@ -24,5 +24,24 @@ section {
     @extend section;
   }
 
+// format text
+
+@mixin SetPolicy () {
+  font-family: "Roboto";
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin TwoPolice () {
+  color:$couleur-back;
+  font-family: 'Shrikhand', serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-right: 30px;
+}
+
+
+
+
 
   

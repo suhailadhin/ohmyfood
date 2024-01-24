@@ -1,18 +1,24 @@
 //restaurant page compiled with style.scss
 
+body {
+    background: var(--White, #FFF);
+}
+
 .content_header {
-    display: flex;
     padding: 14px 89px 13px 17px;
-    align-items: center;
     gap: 42px;
     flex-shrink: 0;
     justify-content: space-between;
+
+    .principal-title {
+        position: absolute;
+        margin-left: 20%;
+    }
 
     h4 {
     color: var(--Black, #101010);
     text-align: center;
     font-size: 30px;
-    
     }
 
     .fa-arrow-left {
@@ -46,11 +52,20 @@ figure {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    justify-content: space-between;
+    justify-content: center;
     margin: 32px 17px 0;
 
     .fa-heart {
         font-size: 35px;
+
+    &:hover {
+        @include animationIconHeart ();
+        
+    }
+
+    &:active {
+        background: #ff79da;
+    }
     }
         h4{
         color: var(--Black, #101010);
@@ -66,11 +81,9 @@ figure {
       .menu_dessert {
          @include flex-structure;
          gap: 12px;
-         margin: 12px;
-         animation: fadeIn 1s forwards;
-         animation-delay: 0.8s; /* Ajout d'un délai à chaque bouton */ 
-
-         .card-text{
+         margin: 12px;       
+        
+         .card-text, h3{
           text-transform: uppercase;
           font-size: 16px;
           font-weight: 300;
@@ -93,6 +106,8 @@ figure {
           }
           h3
              {
+            font-family: 'Roboto';
+            text-transform: none;
             overflow: hidden;
             color: #000;
             text-overflow: ellipsis;
@@ -101,8 +116,7 @@ figure {
             font-weight: 500;
           }
           .menu_text {
-            display: flex;
-            flex-direction: column;
+            @include flex-structure;
             gap: 5px;
             overflow: hidden;            
              .card-text-1 {
@@ -119,17 +133,58 @@ figure {
           }
       }
 
-      .command {
+      .menu_enter{
+        animation: scroll 3s linear;
+      }
+
+      @keyframes scroll {
+        0% { transform: scale(0.5);}
+        100% { transform: scale(1);}
+    }
+
+    .menu_plat {
+        animation: beetwen 5s linear;
+    }
+
+    @keyframes beetwen {
+        0% { transform: scale(0);}
+        50% {transform: scale(0.5);}
+        100% { transform: scale(1);}
+    }
+
+    .menu_dessert {
+        animation: afte 8s linear;
+    }
+
+    @keyframes afte {
+        0% { transform: scale(0);}
+        50% {transform: scale(0.25);}
+        75% {transform: scale(0.5);}
+        100% { transform: scale(1);}
+    }
+
+      .command{
           gap: 40px;
           margin-bottom: 40px;
 
-
-      .filter__dark {
+      .filter__dark{
+        @include flex-structure;
         align-self: center;
         background: linear-gradient(170deg, #ff79da, #9747ff);
         border: none;
         padding: 15px;
         border-radius: 25px; 
+        width: 186px;
+        height: 50px;
+        flex-shrink: 0;
+
+        a{
+            color: var(--White, #FFF);
+            text-align: center;
+            /* Button */
+            font-size: 16px;
+            font-weight: 500;  
+        }
       
        &:hover{
         @include animationFilterDarks ();
@@ -137,25 +192,7 @@ figure {
       }
       }
 
-      .menu_enter {
-        animation-delay: 0.5s; /* Délai pour le deuxième bouton */
-    }
-
-    .menu_plat {
-        animation-delay: 1.4s; /* Délai pour le troisième bouton */
-    }
-
-    .menu_dessert {
-        animation-delay: 1.4s; /* Délai pour le troisième bouton */
-    }
-
-    
-
-    @keyframes fadeIn {
-        to {
-            opacity: 1;
-        }
-    }
+      //span animation
 
       /*media queries for tablette breakpoint 768px*/
 

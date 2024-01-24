@@ -3,7 +3,7 @@
 @mixin tabletQueriesMediaHomePage () {
   /*section bouton filter*/
   .filter__white {
-    padding: 20px;
+    padding: 10px;
   }
 
 .filter-card .btn {
@@ -12,9 +12,6 @@
   }
 /*section menu restaurant*/
   #menu__restaurant {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 28px;
   
     h2{
@@ -66,9 +63,7 @@
   }
   /*section bouton filter*/
   .filter-card {
-    display: flex;
     padding: 50px 180px;
-    flex-direction: column;
     align-items: flex-start;
     gap: 25px;
 
@@ -78,8 +73,6 @@
   }
   }
   .filter-card .btn {
-    flex-direction: row;
-    gap: 50px;
     margin: 0px 2px 0px 20px;
   }
   /*section menu restaurant*/
@@ -94,7 +87,7 @@
   #menu__restaurant .restaurant__card {
     margin: 0px 0px 28px;
     width: 100%;
-    gap: 50px;
+    gap: 50px 100px;
   }
   }
 
@@ -104,21 +97,25 @@
 /*Tablet*/
 
 @mixin tabletQueriesMediaPageRestaurant () {
+  .principal-title {
+    position: absolute;
+    margin-left: 70%;
+}
+
   .contents {
-   justify-content: space-around;
+   justify-content: center;
   }
   .main-container {
     margin-right: 10%;
     margin-left: 10%;
   }
- 
 }
-
 /* MEDIA QUERIES for desktop*/
 
 @mixin desktopQueriesPagesRestaurant () {
   .contents {
     justify-content: center;
+    gap: 60px;
   }
   .menu_enter,
       .menu_plat,

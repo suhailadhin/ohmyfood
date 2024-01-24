@@ -1,3 +1,5 @@
+//animation for home page
+
 //animation button for menu reservation card
 @mixin animationFilterDarks () {
     border-radius: 25px;
@@ -28,6 +30,5 @@
 //animation list in footer
 
 @mixin listEven () {
-  font-weight: bold;
-  text-decoration: underline;
+  cursor: pointer;
 }

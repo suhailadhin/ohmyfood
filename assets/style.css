@@ -19,13 +19,19 @@ section, #menu__restaurant, .filter-card, .menu_reservation-card {
   gap: 10px;
 }
 
+body {
+  background: var(--White, #FFF);
+}
+
 .content_header {
-  display: flex;
   padding: 14px 89px 13px 17px;
-  align-items: center;
   gap: 42px;
   flex-shrink: 0;
   justify-content: space-between;
+}
+.content_header .principal-title {
+  position: absolute;
+  margin-left: 20%;
 }
 .content_header h4 {
   color: var(--Black, #101010);
@@ -61,11 +67,21 @@ figure .background-image {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  justify-content: space-between;
+  justify-content: center;
   margin: 32px 17px 0;
 }
 .contents .fa-heart {
   font-size: 35px;
+}
+.contents .fa-heart:hover {
+  opacity: 1;
+  color: transparent;
+  background: #ff79da;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.contents .fa-heart:active {
+  background: #ff79da;
 }
 .contents h4 {
   color: var(--Black, #101010);
@@ -81,12 +97,12 @@ figure .background-image {
   flex-direction: column;
   gap: 12px;
   margin: 12px;
-  animation: fadeIn 1s forwards;
-  animation-delay: 0.8s; /* Ajout d'un délai à chaque bouton */
 }
-.menu_enter .card-text,
+.menu_enter .card-text, .menu_enter h3,
 .menu_plat .card-text,
-.menu_dessert .card-text {
+.menu_plat h3,
+.menu_dessert .card-text,
+.menu_dessert h3 {
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 300;
@@ -115,6 +131,8 @@ figure .background-image {
 .menu_enter h3,
 .menu_plat h3,
 .menu_dessert h3 {
+  font-family: "Roboto";
+  text-transform: none;
   overflow: hidden;
   color: #000;
   text-overflow: ellipsis;
@@ -144,16 +162,73 @@ figure .background-image {
   font-family: sans-serif;
 }
 
+.menu_enter {
+  animation: scroll 3s linear;
+}
+
+@keyframes scroll {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.menu_plat {
+  animation: beetwen 5s linear;
+}
+
+@keyframes beetwen {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.menu_dessert {
+  animation: afte 8s linear;
+}
+
+@keyframes afte {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0.25);
+  }
+  75% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .command {
   gap: 40px;
   margin-bottom: 40px;
 }
 .command .filter__dark {
+  display: flex;
+  flex-direction: column;
   align-self: center;
   background: linear-gradient(170deg, #ff79da, #9747ff);
   border: none;
   padding: 15px;
   border-radius: 25px;
+  width: 186px;
+  height: 50px;
+  flex-shrink: 0;
+}
+.command .filter__dark a {
+  color: var(--White, #FFF);
+  text-align: center;
+  /* Button */
+  font-size: 16px;
+  font-weight: 500;
 }
 .command .filter__dark:hover {
   border-radius: 25px;
@@ -161,27 +236,14 @@ figure .background-image {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
-.menu_enter {
-  animation-delay: 0.5s; /* Délai pour le deuxième bouton */
-}
-
-.menu_plat {
-  animation-delay: 1.4s; /* Délai pour le troisième bouton */
-}
-
-.menu_dessert {
-  animation-delay: 1.4s; /* Délai pour le troisième bouton */
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
 /*media queries for tablette breakpoint 768px*/
 @media (min-width: 768px) {
+  .principal-title {
+    position: absolute;
+    margin-left: 70%;
+  }
   .contents {
-    justify-content: space-around;
+    justify-content: center;
   }
   .main-container {
     margin-right: 10%;
@@ -192,6 +254,7 @@ figure .background-image {
 @media (min-width: 1024px) {
   .contents {
     justify-content: center;
+    gap: 60px;
   }
   .menu_enter,
   .menu_plat,
@@ -220,8 +283,9 @@ figure .background-image {
 }
 
 .fa-spin {
+  font-weight: bold;
   color: #9356DC;
-  font-size: 58px;
+  font-size: 98px;
 }
 
 @keyframes disappear {
@@ -263,9 +327,13 @@ header {
   /* Shadow/Badge */
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
-header img {
-  height: 36px;
-  padding: 0px 19px 0px 16px;
+header h4 {
+  color: var(--Black, #101010);
+  text-align: center;
+  font-family: "Shrikhand";
+  font-size: 30px;
+  font-weight: 400;
+  margin: auto;
 }
 
 /*navigation style*/
@@ -323,6 +391,11 @@ h1,
 }
 
 /*size for h2*/
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 /*section reservation-card*/
 .menu_reservation-card {
   background: var(--Background, #F6F6F6);
@@ -385,10 +458,10 @@ h1,
   gap: 10px;
   justify-content: flex-start;
   border-radius: 20px;
+  padding: 20px 40px;
   border: none;
-  background: var(--Background, #f6f6f6);
+  background: var(--Background, #F6F6F6);
   /* Shadow/Instructions */
-  padding: 25px;
 }
 .filter-card .filter__white:hover {
   /* Shadow/Instructions */
@@ -415,7 +488,7 @@ h1,
   background: var(--Background, #F6F6F6);
 }
 #menu__restaurant h2 {
-  margin: 40px 25px 20px;
+  margin: 25px 25px 20px;
 }
 #menu__restaurant .restaurant__card {
   display: flex;
@@ -452,7 +525,7 @@ h1,
 }
 #menu__restaurant .card img {
   width: 100%;
-  height: 231px;
+  height: 10rem;
   object-fit: cover;
   border-radius: 15px 15px 0px 0px;
 }
@@ -481,6 +554,9 @@ h1,
   background-clip: text;
   -webkit-background-clip: text;
 }
+#menu__restaurant .icon:active {
+  background-color: #ff79da;
+}
 #menu__restaurant .h3 {
   font-size: 18px;
   font-weight: 700;
@@ -504,8 +580,7 @@ footer li {
   list-style-type: none;
 }
 footer li:hover {
-  font-weight: bold;
-  text-decoration: underline;
+  cursor: pointer;
 }
 footer .fa-solid {
   margin-right: 13px;
@@ -529,7 +604,7 @@ footer .contact {
 @media (min-width: 768px) {
   /*section bouton filter*/
   .filter__white {
-    padding: 20px;
+    padding: 10px;
   }
   .filter-card .btn {
     flex-direction: row;
@@ -537,9 +612,6 @@ footer .contact {
   }
   /*section menu restaurant*/
   #menu__restaurant {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 28px;
   }
   #menu__restaurant h2 {
@@ -587,9 +659,7 @@ footer .contact {
   }
   /*section bouton filter*/
   .filter-card {
-    display: flex;
     padding: 50px 180px;
-    flex-direction: column;
     align-items: flex-start;
     gap: 25px;
   }
@@ -598,8 +668,6 @@ footer .contact {
     margin: 0px;
   }
   .filter-card .btn {
-    flex-direction: row;
-    gap: 50px;
     margin: 0px 2px 0px 20px;
   }
   /*section menu restaurant*/
@@ -613,188 +681,7 @@ footer .contact {
   #menu__restaurant .restaurant__card {
     margin: 0px 0px 28px;
     width: 100%;
-    gap: 50px;
-  }
-}
-.content_header {
-  display: flex;
-  padding: 14px 89px 13px 17px;
-  align-items: center;
-  gap: 42px;
-  flex-shrink: 0;
-  justify-content: space-between;
-}
-.content_header h4 {
-  color: var(--Black, #101010);
-  text-align: center;
-  font-size: 30px;
-}
-.content_header .fa-arrow-left {
-  color: rgb(53, 53, 53);
-  width: 30px;
-  font-size: 20px;
-  z-index: 1;
-}
-
-figure {
-  display: block;
-}
-figure .background-image {
-  width: 100%;
-  height: 275px;
-  object-fit: cover;
-}
-
-.main-container {
-  background: var(--Background, #F6F6F6);
-  display: flex;
-  flex-direction: column;
-  margin-top: -50px;
-  border-radius: 25px 25px;
-  gap: 40px;
-}
-
-.contents {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: space-between;
-  margin: 32px 17px 0;
-}
-.contents .fa-heart {
-  font-size: 35px;
-}
-.contents h4 {
-  color: var(--Black, #101010);
-  font-size: 28px;
-  font-weight: 400;
-  margin: 0;
-}
-
-.menu_enter,
-.menu_plat,
-.menu_dessert {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 12px;
-  animation: fadeIn 1s forwards;
-  animation-delay: 0.8s; /* Ajout d'un délai à chaque bouton */
-}
-.menu_enter .card-text,
-.menu_plat .card-text,
-.menu_dessert .card-text {
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 300;
-  font-family: sans-serif;
-}
-.menu_enter .btn,
-.menu_plat .btn,
-.menu_dessert .btn {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.menu_enter .filter__white,
-.menu_plat .filter__white,
-.menu_dessert .filter__white {
-  padding: 15px;
-  border: none;
-  display: flex;
-  justify-content: space-between;
-  height: 69px;
-  align-items: center;
-  border-radius: 15.043px;
-  background: var(--White, #FFF);
-  box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.1);
-}
-.menu_enter h3,
-.menu_plat h3,
-.menu_dessert h3 {
-  overflow: hidden;
-  color: #000;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 18px;
-  font-weight: 500;
-}
-.menu_enter .menu_text,
-.menu_plat .menu_text,
-.menu_dessert .menu_text {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  overflow: hidden;
-}
-.menu_enter .menu_text .card-text-1,
-.menu_plat .menu_text .card-text-1,
-.menu_dessert .menu_text .card-text-1 {
-  overflow: hidden;
-  color: #000;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 15.043px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  font-family: sans-serif;
-}
-
-.command {
-  gap: 40px;
-  margin-bottom: 40px;
-}
-.command .filter__dark {
-  align-self: center;
-  background: linear-gradient(170deg, #ff79da, #9747ff);
-  border: none;
-  padding: 15px;
-  border-radius: 25px;
-}
-.command .filter__dark:hover {
-  border-radius: 25px;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-}
-
-.menu_enter {
-  animation-delay: 0.5s; /* Délai pour le deuxième bouton */
-}
-
-.menu_plat {
-  animation-delay: 1.4s; /* Délai pour le troisième bouton */
-}
-
-.menu_dessert {
-  animation-delay: 1.4s; /* Délai pour le troisième bouton */
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-/*media queries for tablette breakpoint 768px*/
-@media (min-width: 768px) {
-  .contents {
-    justify-content: space-around;
-  }
-  .main-container {
-    margin-right: 10%;
-    margin-left: 10%;
-  }
-}
-/*media queries for desktop breakpoint 1024px*/
-@media (min-width: 1024px) {
-  .contents {
-    justify-content: center;
-  }
-  .menu_enter,
-  .menu_plat,
-  .menu_dessert {
-    margin-right: 15%;
-    margin-left: 15%;
+    gap: 50px 100px;
   }
 }
 
