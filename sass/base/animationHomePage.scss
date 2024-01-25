@@ -8,13 +8,13 @@
 }
 
 //animation button filter card
-@mixin animationFilter-card () {
+@mixin animationFilter-cards () {
     /* Shadow/Instructions */
    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
 
 //animation card in section menu restaurant 
-@mixin animationFilterCardImg () {
+@mixin animationFilterCardImgs () {
   /* Shadow/Card */
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
 }

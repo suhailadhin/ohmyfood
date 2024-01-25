@@ -1,14 +1,14 @@
 /* MEDIA QUERIES*/
 /*Tablet*/
-@mixin tabletQueriesMediaHomePage () {
+@media (min-width: 768px) {
   /*section bouton filter*/
-  .filter__white {
-    padding: 10px;
-  }
-
 .filter-card .btn {
     flex-direction: row;
     gap: 50px;
+
+    .filter__white {
+         padding: 10px 20px;
+    }
   }
 /*section menu restaurant*/
   #menu__restaurant {
@@ -40,7 +40,7 @@
 
 //Responsive desktop 
 
-@mixin desktopQueriesMediaHomePage () {
+@media (min-width: 1024px) {
   body {
     margin: auto;
   }
@@ -73,14 +73,18 @@
   }
   }
   .filter-card .btn {
-    margin: 0px 2px 0px 20px;
+    margin: 0px 2px 0px 15px;
+  
+    .filter__white {
+      padding: 20px 30px;
+    }
   }
   /*section menu restaurant*/
   #menu__restaurant {
     padding: 0px 180px;  
   }
   #menu__restaurant h2 {
-    margin:30px 0px 0px 0px;
+    margin:0px;
     font-size: 24px;
   } 
   
@@ -91,12 +95,12 @@
   }
   }
 
-  //Media queries for page restaurant
+//Media queries for page restaurant
 
 /* MEDIA QUERIES*/
 /*Tablet*/
 
-@mixin tabletQueriesMediaPageRestaurant () {
+@media (min-width: 768px) {
   .principal-title {
     position: absolute;
     margin-left: 70%;
@@ -112,7 +116,7 @@
 }
 /* MEDIA QUERIES for desktop*/
 
-@mixin desktopQueriesPagesRestaurant () {
+@media(min-width: 1024px) {
   .contents {
     justify-content: center;
     gap: 60px;

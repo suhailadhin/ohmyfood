@@ -1,51 +1,28 @@
 //restaurant page compiled with style.scss
-
-body {
-    background: var(--White, #FFF);
-}
-
-.content_header {
-    padding: 14px 89px 13px 17px;
-    gap: 42px;
-    flex-shrink: 0;
-    justify-content: space-between;
-
-    .principal-title {
-        position: absolute;
-        margin-left: 20%;
-    }
-
-    h4 {
-    color: var(--Black, #101010);
-    text-align: center;
-    font-size: 30px;
-    }
-
-    .fa-arrow-left {
-        color:rgba(53, 53, 53, 1);
-        width: 30px;
-        font-size: 20px;
-        z-index: 1;
-}
-}
-
+/*style for restaurant page*/
+//
 figure {
    display: block;
-
+/*img for page menu*/
 .background-image {
     width: 100%;
     height: 275px;
     object-fit: cover;
 }
 }
-
+/*style of main*/
 .main-container {
-    background: var(--Background, #F6F6F6);
-    display: flex;
-    flex-direction: column;
+    @include color-palet ();
     margin-top: -50px;
     border-radius: 25px 25px;
     gap: 40px;
+
+    h2{
+        @include TwoPolice();
+        font-size: 28px;
+        font-weight: 400;
+        color: $primary-color;
+    }
 }
 
 .contents {
@@ -55,156 +32,98 @@ figure {
     justify-content: center;
     margin: 32px 17px 0;
 
-    .fa-heart {
+    .fa-heart::before {
         font-size: 35px;
+        transition: color 0.3s ease-in-out;
+        .fa-heart:hover {
+            color: #ff69b4; /* Couleur rose lors du survol */
+        }
 
-    &:hover {
-        @include animationIconHeart ();
-        
+        .fa-heart:active {
+            color: #ff69b4; /* Couleur rose lors du clic */
+            transition: none; /* Désactive la transition lors du clic */
+        }
     }
-
-    &:active {
-        background: #ff79da;
-    }
-    }
-        h4{
-        color: var(--Black, #101010);
+    h4{
+        color: $primary-color;
         font-size: 28px;  
-        font-weight: 400; 
         margin: 0; 
     }
 }
 
 //section
-      .menu_enter,
-      .menu_plat,
-      .menu_dessert {
-         @include flex-structure;
-         gap: 12px;
-         margin: 12px;       
+.menu_enter,
+.menu_plat,
+.menu_dessert {
+    @include flex-structure;
+    gap: 12px;
+    margin: 12px;       
         
-         .card-text, h3{
-          text-transform: uppercase;
-          font-size: 16px;
-          font-weight: 300;
-          font-family: sans-serif;
-         }      
-          .btn {
-              @include flex-structure;
-              gap:12px;
-          }      
-          .filter__white {
-              padding: 15px;
-              border: none;
-              display: flex;
-              justify-content: space-between;
-              height: 69px;
-              align-items: center;
-              border-radius: 15.043px;
-              background: var(--White, #FFF);
-              box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.10);  
-          }
-          h3
-             {
-            font-family: 'Roboto';
-            text-transform: none;
-            overflow: hidden;
-            color: #000;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-size: 18px;
-            font-weight: 500;
-          }
-          .menu_text {
-            @include flex-structure;
-            gap: 5px;
-            overflow: hidden;            
-             .card-text-1 {
-                overflow: hidden;
-                color: #000;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                font-size: 15.043px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: normal; 
-                font-family: sans-serif;
-              }
-          }
-      }
+    h3.card-text {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: sans-serif;
 
-      .menu_enter{
-        animation: scroll 3s linear;
-      }
-
-      @keyframes scroll {
-        0% { transform: scale(0.5);}
-        100% { transform: scale(1);}
-    }
-
-    .menu_plat {
-        animation: beetwen 5s linear;
-    }
-
-    @keyframes beetwen {
-        0% { transform: scale(0);}
-        50% {transform: scale(0.5);}
-        100% { transform: scale(1);}
-    }
-
-    .menu_dessert {
-        animation: afte 8s linear;
-    }
-
-    @keyframes afte {
-        0% { transform: scale(0);}
-        50% {transform: scale(0.25);}
-        75% {transform: scale(0.5);}
-        100% { transform: scale(1);}
-    }
-
-      .command{
-          gap: 40px;
-          margin-bottom: 40px;
-
-      .filter__dark{
-        @include flex-structure;
-        align-self: center;
-        background: linear-gradient(170deg, #ff79da, #9747ff);
-        border: none;
-        padding: 15px;
-        border-radius: 25px; 
-        width: 186px;
-        height: 50px;
-        flex-shrink: 0;
-
-        a{
-            color: var(--White, #FFF);
-            text-align: center;
-            /* Button */
-            font-size: 16px;
-            font-weight: 500;  
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10%;
+        width: 8%; /* Ajuste la longueur du soulignement ici */
+        height: 5px; /* Ajuste l'épaisseur du soulignement ici */
+        background-color: #99E2D0; /* Couleur du soulignement */
         }
-      
-       &:hover{
-        @include animationFilterDarks ();
-      }
-      }
-      }
+        }      
+    .btn {
+        @include flex-structure;
+        gap:12px;
+        } 
 
-      //span animation
+    .filter__white {
+        padding: 15px;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        height: 69px;
+        align-items: center;
+        border-radius: 15.043px;
+        background: $couleur-back;
+        box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.10);  
+        }
 
-      /*media queries for tablette breakpoint 768px*/
+    h3{
+        text-transform: none;
+        overflow: hidden;
+        color: $primary-color;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 18px;
+        font-weight: 500;
+          }
 
-      @media (min-width:768px) {
-         @include tabletQueriesMediaPageRestaurant ();
-      }
+    .menu_text {
+        @include flex-structure;
+        gap: 5px;
+        overflow: hidden;  
 
-      /*media queries for desktop breakpoint 1024px*/
+    .card-text-1 {
+        overflow: hidden;
+        color: $primary-color;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 15.043px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal; 
+        font-family: sans-serif;
+           }
+          }
+}
 
-      @media (min-width:1024px) {
-        @include desktopQueriesPagesRestaurant ();
-      }
+
+
 
 
     

@@ -1,0 +1,26 @@
+/*footer style*/
+footer {
+    @include flex-structure;
+    gap: 16px;
+    padding: 22px 25px;
+    background: $secondary-color;
+    
+    li {
+      color: rgba(255, 255, 255, 1);
+      list-style-type: none; 
+    }
+    .fa-solid {
+      margin-right: 13px;
+      width: 11.918px;
+    }
+    a {
+      color: inherit;
+      font-family: sans-serif;
+      font-size: 16px; 
+      font-weight: 500; 
+    }
+  }
+  footer .contact {
+    @include flex-structure;
+    gap: 7px;
+  }
