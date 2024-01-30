@@ -57,8 +57,7 @@
     gap: 30px;
   }
   /*section menu reservation*/
-  .menu_reservation-card,
-  h2{
+  section.menu.reservation-card h2 {
   font-size: 40px;
   font-weight: 700;
   }
@@ -85,7 +84,7 @@
     padding: 0px 180px;  
   }
   #menu__restaurant h2 {
-    margin:0px;
+    margin-top: 30px;
     font-size: 24px;
   } 
   
@@ -122,9 +121,9 @@
     justify-content: center;
     gap: 60px;
   }
-  .menu_enter,
-      .menu_plat,
-      .menu_dessert  {
+  .menu.enter,
+  .menu.plat,
+  .menu.dessert {
     margin-right: 15%;
     margin-left: 15%;
   }

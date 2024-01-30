@@ -1,5 +1,4 @@
 /*footer style*/
-
 footer {
     @include flex-structure;
     gap: 16px;
@@ -19,6 +18,11 @@ footer {
       font-family: sans-serif;
       font-size: 16px; 
       font-weight: 500; 
+    
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
     }
   }
   footer .contact {

@@ -1,35 +1,29 @@
-// animation for home page 
+// animation for page restaurant
 /* section --> menu_enter
            --> menu_plat
            --> menu_dessert */
 /*apparition avec retard 3s pour chaque bloc*/
 
-.menu_enter {
-animation: scroll 3s linear;
+.enter {
+animation: scroll 2s linear;
     }
         @keyframes scroll {
             0% { transform: scale(0.5);}
             100% { transform: scale(1);}
-        }
-    
-.menu_plat {
-animation: beetwen 5s linear;
-        }
-    
+        }   
+.plat {
+animation: beetwen 2s linear;
+        }   
         @keyframes beetwen {
             0% { transform: scale(0);}
-            50% {transform: scale(0.5);}
             100% { transform: scale(1);}
-        }
-    
-.menu_dessert {
-animation: afte 8s linear;
-        }
-    
+        }   
+.dessert {
+animation: afte 2s linear;
+        }   
         @keyframes afte {
             0% { transform: scale(0);}
-            50% {transform: scale(0.25);}
-            75% {transform: scale(0.5);}
             100% { transform: scale(1);}
         }
+       
 

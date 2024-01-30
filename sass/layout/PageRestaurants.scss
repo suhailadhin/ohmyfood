@@ -33,29 +33,38 @@ figure {
     justify-content: center;
     margin: 32px 17px 0;
 
-    .fa-heart::before {
-        font-size: 35px;
-        transition: color 0.3s ease-in-out;
-        .fa-heart:hover {
-            color: #ff69b4; /* Couleur rose lors du survol */
-        }
+    .icon {
+        display: flex;
+        margin-right: 50px;
+    }
 
-        .fa-heart:active {
-            color: #ff69b4; /* Couleur rose lors du clic */
-            transition: none; /* Désactive la transition lors du clic */
+    i{
+        display: flex;
+        position: absolute;
+    }
+
+    .my-heart-full {
+        opacity: 0;
+        transition-property: all;
+        transition-duration: 3s;
+    }
+
+    .fa-heart {
+        font-size: 34px;
+
+        &:hover {
+            @include animationIconHeart ();
         }
+    }    
     }
     h4{
         color: $primary-color;
         font-size: 28px;  
         margin: 0; 
     }
-}
 
 //section
-.menu_enter,
-.menu_plat,
-.menu_dessert {
+.menu {
     @include flex-structure;
     gap: 12px;
     margin: 12px;       
@@ -104,7 +113,7 @@ figure {
         font-weight: 500;
           }
 
-    .menu_text {
+    .text {
         @include flex-structure;
         gap: 5px;
         overflow: hidden;  

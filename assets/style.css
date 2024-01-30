@@ -19,8 +19,8 @@ section, #menu__restaurant, .filter-card, .menu_reservation-card {
            --> menu_plat
            --> menu_dessert */
 /*apparition avec retard 3s pour chaque bloc*/
-.menu_enter {
-  animation: scroll 3s linear;
+.enter {
+  animation: scroll 2s linear;
 }
 
 @keyframes scroll {
@@ -31,34 +31,25 @@ section, #menu__restaurant, .filter-card, .menu_reservation-card {
     transform: scale(1);
   }
 }
-.menu_plat {
-  animation: beetwen 5s linear;
+.plat {
+  animation: beetwen 2s linear;
 }
 
 @keyframes beetwen {
   0% {
     transform: scale(0);
   }
-  50% {
-    transform: scale(0.5);
-  }
   100% {
     transform: scale(1);
   }
 }
-.menu_dessert {
-  animation: afte 8s linear;
+.dessert {
+  animation: afte 2s linear;
 }
 
 @keyframes afte {
   0% {
     transform: scale(0);
-  }
-  50% {
-    transform: scale(0.25);
-  }
-  75% {
-    transform: scale(0.5);
   }
   100% {
     transform: scale(1);
@@ -126,6 +117,10 @@ footer a {
   font-family: sans-serif;
   font-size: 16px;
   font-weight: 500;
+}
+footer a:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 footer .contact {
@@ -218,17 +213,17 @@ main {
 }
 
 /*section reservation-card*/
-.menu_reservation-card {
+section.menu.reservation-card, .menu.reservation-card#menu__restaurant, .menu.reservation-card.filter-card, .menu.reservation-card.menu_reservation-card {
   background: var(--Background, #F6F6F6);
-  width: 100%;
+  margin: 0px;
   padding: 20px 10px 20px 10px;
 }
-.menu_reservation-card h2 {
+section.menu.reservation-card h2, .menu.reservation-card#menu__restaurant h2, .menu.reservation-card.filter-card h2, .menu.reservation-card.menu_reservation-card h2 {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
 }
-.menu_reservation-card .txt {
+section.menu.reservation-card .txt, .menu.reservation-card#menu__restaurant .txt, .menu.reservation-card.filter-card .txt, .menu.reservation-card.menu_reservation-card .txt {
   font-family: sans-serif;
   text-align: center;
   /* Paragraph */
@@ -265,7 +260,7 @@ main {
   background: var(--Background, #F6F6F6);
 }
 .filter-card .filter__white:hover {
-  /* Shadow/Instructions */
+  cursor: pointer;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
 .filter-card .fa-store:before {
@@ -347,8 +342,7 @@ main {
 }
 #menu__restaurant .my-heart-full:hover {
   opacity: 1;
-  color: transparent;
-  background: #ff79da;
+  color: #ff79da;
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -400,43 +394,49 @@ figure .background-image {
   justify-content: center;
   margin: 32px 17px 0;
 }
-.contents .fa-heart::before {
-  font-size: 35px;
-  transition: color 0.3s ease-in-out;
+.contents .icon {
+  display: flex;
+  margin-right: 50px;
 }
-.contents .fa-heart::before .fa-heart:hover {
-  color: #ff69b4; /* Couleur rose lors du survol */
+.contents i {
+  display: flex;
+  position: absolute;
 }
-.contents .fa-heart::before .fa-heart:active {
-  color: #ff69b4; /* Couleur rose lors du clic */
-  transition: none; /* Désactive la transition lors du clic */
+.contents .my-heart-full {
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 3s;
 }
-.contents h4 {
+.contents .fa-heart {
+  font-size: 34px;
+}
+.contents .fa-heart:hover {
+  opacity: 1;
+  color: #ff79da;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+h4 {
   color: #000;
   font-size: 28px;
   margin: 0;
 }
 
-.menu_enter,
-.menu_plat,
-.menu_dessert {
+.menu {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin: 12px;
 }
-.menu_enter h3.card-text,
-.menu_plat h3.card-text,
-.menu_dessert h3.card-text {
+.menu h3.card-text {
   position: relative;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 300;
   font-family: sans-serif;
 }
-.menu_enter h3.card-text::after,
-.menu_plat h3.card-text::after,
-.menu_dessert h3.card-text::after {
+.menu h3.card-text::after {
   content: "";
   position: absolute;
   left: 0;
@@ -445,16 +445,12 @@ figure .background-image {
   height: 5px; /* Ajuste l'épaisseur du soulignement ici */
   background-color: #99E2D0; /* Couleur du soulignement */
 }
-.menu_enter .btn,
-.menu_plat .btn,
-.menu_dessert .btn {
+.menu .btn {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.menu_enter .filter__white,
-.menu_plat .filter__white,
-.menu_dessert .filter__white {
+.menu .filter__white {
   padding: 15px;
   border: none;
   display: flex;
@@ -465,9 +461,7 @@ figure .background-image {
   background: #fff;
   box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.1);
 }
-.menu_enter h3,
-.menu_plat h3,
-.menu_dessert h3 {
+.menu h3 {
   text-transform: none;
   overflow: hidden;
   color: #000;
@@ -476,17 +470,13 @@ figure .background-image {
   font-size: 18px;
   font-weight: 500;
 }
-.menu_enter .menu_text,
-.menu_plat .menu_text,
-.menu_dessert .menu_text {
+.menu .text {
   display: flex;
   flex-direction: column;
   gap: 5px;
   overflow: hidden;
 }
-.menu_enter .menu_text .card-text-1,
-.menu_plat .menu_text .card-text-1,
-.menu_dessert .menu_text .card-text-1 {
+.menu .text .card-text-1 {
   overflow: hidden;
   color: #000;
   text-overflow: ellipsis;
@@ -549,8 +539,7 @@ figure .background-image {
     gap: 30px;
   }
   /*section menu reservation*/
-  .menu_reservation-card,
-  h2 {
+  section.menu.reservation-card h2, .menu.reservation-card#menu__restaurant h2, .menu.reservation-card.filter-card h2, .menu.reservation-card.menu_reservation-card h2 {
     font-size: 40px;
     font-weight: 700;
   }
@@ -575,7 +564,7 @@ figure .background-image {
     padding: 0px 180px;
   }
   #menu__restaurant h2 {
-    margin: 0px;
+    margin-top: 30px;
     font-size: 24px;
   }
   #menu__restaurant .restaurant__card {
@@ -605,9 +594,9 @@ figure .background-image {
     justify-content: center;
     gap: 60px;
   }
-  .menu_enter,
-  .menu_plat,
-  .menu_dessert {
+  .menu.enter,
+  .menu.plat,
+  .menu.dessert {
     margin-right: 15%;
     margin-left: 15%;
   }
