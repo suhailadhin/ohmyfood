@@ -15,6 +15,7 @@
   nav {
     @include center-flex();
   }
+  
   //heritage avec la fonction include et extend pour la section
 section {
     @include flex-structure;
@@ -26,7 +27,6 @@ section {
   }
 
 // format text
-
 @mixin SetPolicy () {
   font-family: "Roboto";
   font-style: normal;
