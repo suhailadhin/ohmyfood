@@ -15,46 +15,6 @@ section, #menu__restaurant, .filter-card, .menu_reservation-card {
   gap: 10px;
 }
 
-/* section --> menu_enter
-           --> menu_plat
-           --> menu_dessert */
-/*apparition avec retard 3s pour chaque bloc*/
-.enter {
-  animation: scroll 2s linear;
-}
-
-@keyframes scroll {
-  0% {
-    transform: scale(0.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.plat {
-  animation: beetwen 2s linear;
-}
-
-@keyframes beetwen {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.dessert {
-  animation: afte 2s linear;
-}
-
-@keyframes afte {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 /*header style*/
 header {
   height: 63px;
@@ -374,7 +334,7 @@ figure .background-image {
 .main-container {
   background: var(--Background, #F6F6F6);
   margin-top: -50px;
-  border-radius: 25px 25px;
+  border-radius: 25px 25px 0px 0px;
   gap: 40px;
 }
 .main-container h2 {
@@ -451,7 +411,6 @@ h4 {
   gap: 12px;
 }
 .menu .filter__white {
-  padding: 15px;
   border: none;
   display: flex;
   justify-content: space-between;
@@ -486,6 +445,31 @@ h4 {
   font-weight: 300;
   line-height: normal;
   font-family: sans-serif;
+}
+
+span.price {
+  margin-right: 10px;
+}
+
+.check_animation {
+  color: white;
+  background-color: #99E2D0;
+  font-size: 25px;
+  margin-right: 0px;
+  height: 70px;
+  width: 10%;
+  transition: 1s;
+  border-radius: 0px 15.043px 15.043px 0px;
+  transform: translateX(0); /* Initial position */
+}
+.check_animation > .fa-check-circle {
+  transform: rotate(180deg);
+  transition: 1s;
+}
+.check_animation .fa-check-circle:hover, .check_animation:active {
+  transform: rotate(360deg);
+  transition: 1s;
+  opacity: 1;
 }
 
 /* MEDIA QUERIES*/
@@ -615,6 +599,7 @@ h4 {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
 .filter__dark a, .filter__dark-top a {
+  font-family: "Roboto", "sans-shérif";
   color: #fff;
   text-align: center;
   /* Button */
@@ -633,11 +618,13 @@ h4 {
   place-items: center;
   background: #353535;
   inset: 0;
+  transform-origin: top;
+  inset: 0;
   z-index: 1;
-  opacity: 82%;
+  opacity: 75%;
+  transform-origin: 50% 50%;
   animation: disappear 3s forwards;
   animation-delay: 1s;
-  transform-origin: top;
 }
 .loader::after {
   content: "Ohmyfood";
@@ -656,6 +643,64 @@ h4 {
   to {
     transform: scale(0);
   }
+}
+/* section --> menu_enter
+           --> menu_plat
+           --> menu_dessert */
+/*apparition avec retard 3s pour chaque bloc*/
+.enter {
+  animation: scroll 2s linear;
+}
+
+@keyframes scroll {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.plat {
+  animation: beetwen 2s linear;
+}
+
+@keyframes beetwen {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.dessert {
+  animation: afte 2s linear;
+}
+
+@keyframes afte {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.check_animation:hover {
+  width: 12%;
+  transition: 1s;
+}
+
+.check_animation {
+  display: none;
+}
+
+.price:hover + .check_animation,
+.check_animation:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  cursor: pointer;
+  /* Afficher la check animation lors du survol de la span ou de la check_animation elle-même */
 }
 
 /*# sourceMappingURL=style.css.map */

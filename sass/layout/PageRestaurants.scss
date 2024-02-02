@@ -1,7 +1,6 @@
 //restaurant page compiled with style.scss
 /*style for restaurant page*/
 //
-
 figure {
    display: block;
 /*img for page menu*/
@@ -11,13 +10,14 @@ figure {
     object-fit: cover;
 }
 }
+
 /*style of main*/
 .main-container {
     @include color-palet ();
     margin-top: -50px;
-    border-radius: 25px 25px;
+    border-radius: 25px 25px 0px 0px;
     gap: 40px;
-
+    
     h2{
         @include TwoPolice();
         font-size: 28px;
@@ -53,11 +53,15 @@ figure {
         font-size: 34px;
 
         &:hover {
-            @include animationIconHeart ();
+            opacity: 1;
+            color: #ff79da;
+            background-clip: text;
+            -webkit-background-clip: text;
         }
     }    
     }
-    h4{
+
+    h4 {
         color: $primary-color;
         font-size: 28px;  
         margin: 0; 
@@ -85,14 +89,14 @@ figure {
         height: 5px; /* Ajuste l'épaisseur du soulignement ici */
         background-color: #99E2D0; /* Couleur du soulignement */
         }
-        }      
+        }
+
     .btn {
         @include flex-structure;
         gap:12px;
         } 
 
     .filter__white {
-        padding: 15px;
         border: none;
         display: flex;
         justify-content: space-between;
@@ -131,6 +135,43 @@ figure {
            }
           }
 }
+
+// style for span class
+span.price {
+    margin-right: 10px;
+}
+
+ .check_animation {
+    color: white;
+    background-color: #99E2D0;
+    font-size: 25px;
+    margin-right: 0px;
+    height: 70px;
+    width: 10%;
+    transition: 1s;
+    border-radius: 0px 15.043px 15.043px 0px;
+    transform: translateX(0); /* Initial position */
+
+    & > .fa-check-circle {
+        transform: rotate(180deg);
+        transition: 1s;
+    }
+
+    .fa-check-circle:hover,
+    &:active {
+        transform: rotate(360deg);
+        transition: 1s;
+        opacity: 1;   
+    }
+}
+
+
+
+
+
+
+
+
 
 
 

@@ -1,15 +1,17 @@
-//loader style and animation
 .loader {
     position: fixed;
     display: grid;
     place-items: center;
     background:$secondary-color;
     inset: 0;
+    transform-origin: top;
+    inset: 0;
     z-index: 1;
-    opacity: 82%;
+    opacity: 75%;
+    transform-origin: 50% 50%;
     animation: disappear 3s forwards;
     animation-delay: 1s;
-    transform-origin: top;
+    
     &::after {
         content: "Ohmyfood";
         color: $primary-color;
@@ -17,6 +19,7 @@
         font-size: 25px;
     }
 }
+
 .fa-spin {
     font-weight: bold;
     color: $pink-color;
@@ -28,4 +31,3 @@
         transform: scale(0);
     }
 }
-

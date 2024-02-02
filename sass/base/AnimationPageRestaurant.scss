@@ -1,0 +1,50 @@
+// animation for page restaurant
+/* section --> menu_enter
+           --> menu_plat
+           --> menu_dessert */
+/*apparition avec retard 3s pour chaque bloc*/
+
+.enter {
+    animation: scroll 2s linear;
+        }
+    
+            @keyframes scroll {
+                0% { transform: scale(0);}
+                100% { transform: scale(1);}
+            }   
+    
+    .plat {
+    animation: beetwen 2s linear;
+            }   
+            @keyframes beetwen {
+                0% { transform: scale(0);}
+                100% { transform: scale(1);}
+            } 
+    
+    .dessert {
+    animation: afte 2s linear;
+            }   
+            @keyframes afte {
+                0% { transform: scale(0);}
+                100% { transform: scale(1);}
+            }
+
+// Animation for span
+.check_animation:hover {
+    width: 12%;
+    transition: 1s;
+}
+
+.check_animation {
+    display: none;
+}
+
+.price:hover + .check_animation,
+.check_animation:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+    /* Afficher la check animation lors du survol de la span ou de la check_animation elle-même */
+}

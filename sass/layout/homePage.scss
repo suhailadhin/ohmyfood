@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
   }
+
   /*body*/
   body {
     max-width: 1440px;
@@ -12,10 +13,12 @@
     @include color-palet();
     background: $couleur-back;
   }
+
   /*link*/
   a {
     text-decoration: none;
     }
+
   /*navigation style*/
   nav {
     height: 50px;
@@ -29,17 +32,20 @@
        font-weight: 500;
     }
   }
+
   /*color for text*/
   h2,
   h3
   {
     color: $primary-color;
   }
+
   /*color for text*/
   h2,
   .card-text {
     color: $secondary-color;
   }
+
   /*style*/
   a,
   .card-title,
@@ -63,6 +69,7 @@
     font-weight: 500;
     line-height: normal;
   }
+
   /*size for h2*/
   .reservation-card h2,
   .filter-card h2,
@@ -95,6 +102,7 @@
       font-weight: 300;
     }
   }
+
   /*section filter-card
      button*/
   .filter-card {
@@ -128,7 +136,6 @@
     .fa-store:before {
       color: $pink-color;
     }
-  
     .number {
       color: $couleur-back;
       border-radius: 50%;
@@ -141,6 +148,7 @@
       left: -15px;
     }
   }
+
   /*section menu restaurant*/
   #menu__restaurant {
     @include color-palet();
@@ -204,18 +212,22 @@
       transition-duration: 3s;
 
     &:hover {
-        @include animationIconHeart();
+      opacity: 1;
+      color: #ff79da;
+      background-clip: text;
+      -webkit-background-clip: text;
     }
     }
 
     .icon:active {
       background-color: #ff79da;
     }
-  
+
     h3 {
       font-size: 18px;
       font-weight: 700;
     }
+    
     .card-text {
       font-size: 17px;
       font-weight: 300;

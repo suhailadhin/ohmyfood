@@ -2,15 +2,14 @@
 @import './utils/variables.scss';
 @import './utils/mixinHomePage.scss';
 @import './utils/mixinPageRestaurants.scss';
-@import './base/animationPageRestaurants.scss';
 @import './layout/header.scss';
 @import './layout/footer.scss';
 @import './layout/homePage.scss';
 @import './layout/PageRestaurants.scss';
-@import './base/animationHomePage.scss';
 @import './base/mediaquery.scss';
 @import './composants/button.scss';
 @import './composants/loader.scss';
+@import './base/AnimationPageRestaurant.scss';
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap";
 
 //compile to fil;
