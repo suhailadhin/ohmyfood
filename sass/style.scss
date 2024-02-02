@@ -1,7 +1,6 @@
 //@ import files scss from sass folder;
 @import './utils/variables.scss';
-@import './utils/mixinHomePage.scss';
-@import './utils/mixinPageRestaurants.scss';
+@import './utils/mixin.scss';
 @import './layout/header.scss';
 @import './layout/footer.scss';
 @import './layout/homePage.scss';
