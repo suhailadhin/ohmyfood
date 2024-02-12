@@ -30,21 +30,26 @@
             }
 
 // Animation for span
-
 .check_animation:hover {
-    width: 12%;
-    transition: 1s;
+   transition: 1s;
 }
 
 .check_animation {
     display: none;
 }
 
-.price:hover + .check_animation,
-.check_animation:hover {
+.filter__white:hover .check_animation 
+{
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
-    cursor: pointer;
+    width: 4rem;
+    cursor: pointer; 
 }
+
+span.price:hover .check_animation {
+    width: 100px; /* Largeur du span lorsque survolé */
+}
+
+

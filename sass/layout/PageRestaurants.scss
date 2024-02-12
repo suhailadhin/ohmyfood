@@ -46,7 +46,7 @@ figure {
     .my-heart-full {
         opacity: 0;
         transition-property: all;
-        transition-duration: 3s;
+        transition-duration: 1s;
     }
 
     .fa-heart {
@@ -71,8 +71,8 @@ figure {
 .menu {
     @include flex-structure;
     gap: 12px;
-    margin: 12px;       
-        
+    margin: 12px; 
+         
     h3.card-text {
     position: relative;
     text-transform: uppercase;
@@ -88,7 +88,7 @@ figure {
         width: 8%; /* Ajuste la longueur du soulignement ici */
         height: 5px; /* Ajuste l'épaisseur du soulignement ici */
         background-color: #99E2D0; /* Couleur du soulignement */
-        }
+        }  
         }
 
     .btn {
@@ -97,6 +97,7 @@ figure {
         } 
 
     .filter__white {
+        cursor: pointer;
         border: none;
         display: flex;
         justify-content: space-between;
@@ -138,7 +139,9 @@ figure {
 // style for span class
 
 span.price {
+    display: block;
     margin-right: 10px;
+    position: relative;
 }
 
  .check_animation {
@@ -147,22 +150,7 @@ span.price {
     font-size: 25px;
     margin-right: 0px;
     height: 70px;
-    width: 10%;
-    transition: 1s;
     border-radius: 0px 15.043px 15.043px 0px;
-    transform: translateX(0); /* Initial position */
-
-    & > .fa-check-circle {
-        transform: rotate(180deg);
-        transition: 1s;
-    }
-
-    .fa-check-circle:hover,
-    &:active {
-        transform: rotate(360deg);
-        transition: 1s;
-        opacity: 1;   
-    }
 }
 
 

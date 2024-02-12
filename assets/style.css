@@ -298,7 +298,7 @@ section.menu.reservation-card .txt, .menu.reservation-card#menu__restaurant .txt
 #menu__restaurant .my-heart-full {
   opacity: 0;
   transition-property: all;
-  transition-duration: 3s;
+  transition-duration: 1s;
 }
 #menu__restaurant .my-heart-full:hover {
   opacity: 1;
@@ -365,7 +365,7 @@ figure .background-image {
 .contents .my-heart-full {
   opacity: 0;
   transition-property: all;
-  transition-duration: 3s;
+  transition-duration: 1s;
 }
 .contents .fa-heart {
   font-size: 34px;
@@ -411,6 +411,7 @@ h4 {
   gap: 12px;
 }
 .menu .filter__white {
+  cursor: pointer;
   border: none;
   display: flex;
   justify-content: space-between;
@@ -448,7 +449,9 @@ h4 {
 }
 
 span.price {
+  display: block;
   margin-right: 10px;
+  position: relative;
 }
 
 .check_animation {
@@ -457,19 +460,7 @@ span.price {
   font-size: 25px;
   margin-right: 0px;
   height: 70px;
-  width: 10%;
-  transition: 1s;
   border-radius: 0px 15.043px 15.043px 0px;
-  transform: translateX(0); /* Initial position */
-}
-.check_animation > .fa-check-circle {
-  transform: rotate(180deg);
-  transition: 1s;
-}
-.check_animation .fa-check-circle:hover, .check_animation:active {
-  transform: rotate(360deg);
-  transition: 1s;
-  opacity: 1;
 }
 
 /* MEDIA QUERIES*/
@@ -619,9 +610,9 @@ span.price {
   background: #353535;
   inset: 0;
   transform-origin: top;
-  inset: 0;
   z-index: 1;
   opacity: 75%;
+  animation-duration: 1s;
   transform-origin: 50% 50%;
   animation: disappear 3s forwards;
   animation-delay: 1s;
@@ -630,7 +621,7 @@ span.price {
   content: "Ohmyfood";
   color: #000;
   font-family: "Shrikhand", serif;
-  font-size: 25px;
+  font-size: 55px;
 }
 
 .fa-spin {
@@ -640,8 +631,12 @@ span.price {
 }
 
 @keyframes disappear {
-  to {
-    transform: scale(0);
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
   }
 }
 /* section --> menu_enter
@@ -685,7 +680,6 @@ span.price {
   }
 }
 .check_animation:hover {
-  width: 12%;
   transition: 1s;
 }
 
@@ -693,13 +687,17 @@ span.price {
   display: none;
 }
 
-.price:hover + .check_animation,
-.check_animation:hover {
+.filter__white:hover .check_animation {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
+  width: 4rem;
   cursor: pointer;
+}
+
+span.price:hover .check_animation {
+  width: 100px; /* Largeur du span lorsque survolé */
 }
 
 /*# sourceMappingURL=style.css.map */
