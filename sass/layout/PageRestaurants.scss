@@ -138,37 +138,21 @@ figure {
 }
 // style for span class
 
-span.price {
-    display: block;
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
     margin-right: 10px;
-    position: relative;
 }
 
  .check_animation {
     color: white;
     background-color: #99E2D0;
     font-size: 25px;
-    margin-right: 0px;
+    margin-right: -10px;
+    margin-left: 15px;
     height: 70px;
     border-radius: 0px 15.043px 15.043px 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-    
-
-    
+   

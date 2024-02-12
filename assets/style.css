@@ -448,17 +448,20 @@ h4 {
   font-family: sans-serif;
 }
 
-span.price {
-  display: block;
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  align-items: center;
   margin-right: 10px;
-  position: relative;
 }
 
 .check_animation {
   color: white;
   background-color: #99E2D0;
   font-size: 25px;
-  margin-right: 0px;
+  margin-right: -10px;
+  margin-left: 15px;
   height: 70px;
   border-radius: 0px 15.043px 15.043px 0px;
 }
@@ -614,8 +617,7 @@ span.price {
   opacity: 75%;
   animation-duration: 1s;
   transform-origin: 50% 50%;
-  animation: disappear 3s forwards;
-  animation-delay: 1s;
+  animation: disappear 2s forwards;
 }
 .loader::after {
   content: "Ohmyfood";
@@ -679,10 +681,6 @@ span.price {
     transform: scale(1);
   }
 }
-.check_animation:hover {
-  transition: 1s;
-}
-
 .check_animation {
   display: none;
 }
@@ -694,10 +692,6 @@ span.price {
   align-content: center;
   width: 4rem;
   cursor: pointer;
-}
-
-span.price:hover .check_animation {
-  width: 100px; /* Largeur du span lorsque survolé */
 }
 
 /*# sourceMappingURL=style.css.map */

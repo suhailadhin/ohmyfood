@@ -29,10 +29,7 @@
                 100% { transform: scale(1);}
             }
 
-// Animation for span
-.check_animation:hover {
-   transition: 1s;
-}
+// Animation for button
 
 .check_animation {
     display: none;
@@ -46,10 +43,6 @@
     align-content: center;
     width: 4rem;
     cursor: pointer; 
-}
-
-span.price:hover .check_animation {
-    width: 100px; /* Largeur du span lorsque survolé */
 }
 
 
