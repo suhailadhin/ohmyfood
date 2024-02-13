@@ -84,9 +84,9 @@ figure {
         content: "";
         position: absolute;
         left: 0;
-        bottom: -10%;
-        width: 8%; /* Ajuste la longueur du soulignement ici */
-        height: 5px; /* Ajuste l'épaisseur du soulignement ici */
+        bottom: 0;
+        width: 4rem; /* Ajuste la longueur du soulignement ici */
+        height: 0.2rem; /* Ajuste l'épaisseur du soulignement ici */
         background-color: #99E2D0; /* Couleur du soulignement */
         }  
         }
@@ -153,6 +153,9 @@ figure {
     margin-right: -10px;
     margin-left: 15px;
     height: 70px;
+    transition: width 0.5s ease-out;
+    width: 1rem;
     border-radius: 0px 15.043px 15.043px 0px;
+    visibility: hidden;
 }
    

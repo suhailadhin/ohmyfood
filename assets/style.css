@@ -400,9 +400,9 @@ h4 {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -10%;
-  width: 8%; /* Ajuste la longueur du soulignement ici */
-  height: 5px; /* Ajuste l'épaisseur du soulignement ici */
+  bottom: 0;
+  width: 4rem; /* Ajuste la longueur du soulignement ici */
+  height: 0.2rem; /* Ajuste l'épaisseur du soulignement ici */
   background-color: #99E2D0; /* Couleur du soulignement */
 }
 .menu .btn {
@@ -463,7 +463,10 @@ h4 {
   margin-right: -10px;
   margin-left: 15px;
   height: 70px;
+  transition: width 0.5s ease-out;
+  width: 1rem;
   border-radius: 0px 15.043px 15.043px 0px;
+  visibility: hidden;
 }
 
 /* MEDIA QUERIES*/
@@ -681,17 +684,14 @@ h4 {
     transform: scale(1);
   }
 }
-.check_animation {
-  display: none;
-}
-
 .filter__white:hover .check_animation {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  width: 4rem;
   cursor: pointer;
+  width: 5rem;
+  visibility: visible;
 }
 
 /*# sourceMappingURL=style.css.map */

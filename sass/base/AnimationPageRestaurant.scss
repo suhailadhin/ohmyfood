@@ -31,18 +31,12 @@
 
 // Animation for button
 
-.check_animation {
-    display: none;
-}
-
 .filter__white:hover .check_animation 
-{
-    display: flex;
+{   display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
-    width: 4rem;
     cursor: pointer; 
+    width: 5rem;
+    visibility: visible; 
 }
-
-
