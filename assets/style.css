@@ -401,7 +401,7 @@ h4 {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 4rem; /* Ajuste la longueur du soulignement ici */
+  width: 2rem; /* Ajuste la longueur du soulignement ici */
   height: 0.2rem; /* Ajuste l'épaisseur du soulignement ici */
   background-color: #99E2D0; /* Couleur du soulignement */
 }
