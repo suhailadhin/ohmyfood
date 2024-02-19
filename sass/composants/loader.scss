@@ -1,37 +1,80 @@
+.container-loading {
+  position: fixed;   
+  place-items: center;
+  background:$secondary-color;
+  inset: 0;
+  transform-origin: top;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  
+  animation: todo 4s forwards;
+}
+
 .loader {
-    position: fixed;
-    display: grid;
-    place-items: center;
-    background:$secondary-color;
-    inset: 0;
-    transform-origin: top;
-    z-index: 1;
-    opacity: 75%;
-    animation-duration: 1s;
-    transform-origin: 50% 50%;
-    animation: disappear 2s forwards;
-    
-    &::after {
-        content: "Ohmyfood";
-        color: $primary-color;
-        font-family:'Shrikhand', serif;
-        font-size: 55px;
-    }
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  border-bottom-color: #ff79da;
+  border-top-color: $couleur-back;
+  animation: spin 2.5s linear infinite;
+  z-index: 1;
 }
 
-.fa-spin {
-    font-weight: bold;
-    color: $pink-color;
-    font-size: 98px;
+.loader-1 {
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 50%;
+  margin: 14px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  border-bottom-color: $pink-color;
+  border-top-color: var(--Green, #99e2d0);
+  animation: lre 2.5s linear infinite; 
+  z-index: 1;    
 }
 
-@keyframes disappear {
-    90% {
-      opacity: 0.7;
-    }
-    100% {
+@keyframes todo {
+  0% { 
+      opacity: 1;
+  }
+  100% {
       visibility: hidden;
       opacity: 0;
-    }
   }
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(90deg)
+  }
+
+  50% {
+      transform: rotate(180deg)
+  }
+
+  100% {
+      transform: rotate(360deg)
+  }
+}
+
+@keyframes lre {
+  0% {
+      transform: rotate(90deg)
+  }
+
+  50% {
+      transform: rotate(180deg)
+  }
+
+  100% {
+      transform: rotate(360deg)
+  }
+}
   
