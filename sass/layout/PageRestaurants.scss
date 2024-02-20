@@ -136,7 +136,7 @@ figure {
            }
           }
 }
-// style for span class
+// style for filter white
 
 .price {
     display: flex;
@@ -147,15 +147,17 @@ figure {
 }
 
  .check_animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
     background-color: #99E2D0;
     font-size: 25px;
     margin-right: -10px;
-    margin-left: 15px;
+    margin-left: 10px;
     height: 70px;
-    transition: width 0.5s ease-out;
+    transition: 0.5s ease-in;
     width: 1rem;
     border-radius: 0px 15.043px 15.043px 0px;
     visibility: hidden;
 }
-   

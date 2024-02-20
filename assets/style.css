@@ -264,17 +264,15 @@ section.menu.reservation-card .txt, .menu.reservation-card#menu__restaurant .txt
 }
 #menu__restaurant .title {
   position: absolute;
-  top: 10%;
-  right: 5%;
-  padding: 7px;
+  top: 7%;
+  right: 4%;
+  padding: 9px;
   border-radius: 2px;
   background: var(--Green, #99e2d0);
   /* Shadow/Badge */
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   color: var(--Green-Font, #008766);
-  text-align: center;
   font-size: 14px;
-  font-weight: 500;
 }
 #menu__restaurant .card img {
   width: 100%;
@@ -288,9 +286,9 @@ section.menu.reservation-card .txt, .menu.reservation-card#menu__restaurant .txt
 #menu__restaurant .icon {
   color: #000;
   float: right; /* Alignement à droite */
-  margin-top: -20px;
+  margin-top: -35px;
   margin-right: 20px;
-  font-size: 20px;
+  font-size: 25px;
 }
 #menu__restaurant i {
   position: absolute;
@@ -457,13 +455,16 @@ h4 {
 }
 
 .check_animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   background-color: #99E2D0;
   font-size: 25px;
   margin-right: -10px;
-  margin-left: 15px;
+  margin-left: 10px;
   height: 70px;
-  transition: width 0.5s ease-out;
+  transition: 0.5s ease-in;
   width: 1rem;
   border-radius: 0px 15.043px 15.043px 0px;
   visibility: hidden;
@@ -538,14 +539,14 @@ h4 {
     margin: 0px 2px 0px 15px;
   }
   .filter-card .btn .filter__white {
-    padding: 20px 30px;
+    padding: 25px 55px;
   }
   /*section menu restaurant*/
   #menu__restaurant {
     padding: 0px 180px;
   }
   #menu__restaurant h2 {
-    margin-top: 30px;
+    margin: 30px 0px 0px 0px;
     font-size: 24px;
   }
   #menu__restaurant .restaurant__card {
@@ -723,10 +724,6 @@ h4 {
   }
 }
 .filter__white:hover .check_animation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
   cursor: pointer;
   width: 5rem;
   visibility: visible;
